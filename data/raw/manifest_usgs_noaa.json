@@ -1,0 +1,70 @@
+{
+  "versi": "2.0-usgs-noaa",
+  "tanggal_diakses": "2026-11-22",
+  "periode": "2010-01-01 s.d. 2024-12-31",
+  "wilayah": "Indonesia (bbox USGS: lon 95-141, lat -11-6)",
+  "entri": [
+    {
+      "id": "usgs_comcat",
+      "sumber": "USGS Earthquake Hazards Program — ComCat FDSN Event Web Service",
+      "dataset": "Gempa bumi Indonesia, M>=5.0, 2010-01-01 s.d. 2024-12-31",
+      "url": "https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2010-01-01&endtime=2024-12-31&minmagnitude=5&minlatitude=-11&maxlatitude=6&minlongitude=95&maxlongitude=141&orderby=time-asc",
+      "parameter": {
+        "format": "csv",
+        "starttime": "2010-01-01",
+        "endtime": "2024-12-31",
+        "minmagnitude": "5",
+        "minlatitude": "-11",
+        "maxlatitude": "6",
+        "minlongitude": "95",
+        "maxlongitude": "141",
+        "orderby": "time-asc"
+      },
+      "berkas": "usgs_gempa_idn_2010_2024.csv",
+      "sha256": "ef146014a03f9278e926af50df8ec07d00c344ec04a4ad3ff8f65f90c5a253fd",
+      "lisensi": "USGS data are in the public domain",
+      "sitasi": "U.S. Geological Survey (USGS), Earthquake Hazards Program, ComCat Earthquake Catalog.",
+      "diakses": "2026-11-22"
+    },
+    {
+      "id": "noaa_tsu_event",
+      "sumber": "NOAA/NCEI WDS Global Historical Tsunami Database (G02151)",
+      "dataset": "Event tsunami dengan sumber di Indonesia, 2010-2024",
+      "url": "https://www.ngdc.noaa.gov/hazel/hazard-service/api/v1/tsunamis/events?country=INDONESIA&minYear=2010&maxYear=2024",
+      "parameter": {
+        "country": "INDONESIA",
+        "minYear": "2010",
+        "maxYear": "2024"
+      },
+      "berkas": "noaa_tsunami_event_idn_2010_2024.json",
+      "sha256": "048c9e20be7a3f91f6a6ae8ee85548f1c5f9393d90d2eb2d5871e35d0a5864cd",
+      "jumlah_record": 19,
+      "lisensi": "NOAA data are generally in the public domain",
+      "sitasi": "National Geophysical Data Center / World Data Service: NCEI/WDS Global Historical Tsunami Database. NOAA National Centers for Environmental Information. doi:10.7289/V5PN93H7.",
+      "diakses": "2026-11-22"
+    },
+    {
+      "id": "noaa_tsu_runup",
+      "sumber": "NOAA/NCEI WDS Global Historical Tsunami Database (G02151)",
+      "dataset": "Titik runup/observasi tsunami di Indonesia untuk sumber 2010-2024",
+      "url": "https://www.ngdc.noaa.gov/hazel/hazard-service/api/v1/tsunamis/runups?country=INDONESIA&sourceMinYear=2010&sourceMaxYear=2024&itemsPerPage=200",
+      "parameter": {
+        "country": "INDONESIA",
+        "sourceMinYear": "2010",
+        "sourceMaxYear": "2024",
+        "itemsPerPage": "200"
+      },
+      "berkas": "noaa_tsunami_runup_idn_2010_2024.json",
+      "sha256": "0c13e2feebd4e80d56ecdcb163594601535659285cab2bcd0bf3bcf07fea376c",
+      "jumlah_record": 1130,
+      "lisensi": "NOAA data are generally in the public domain",
+      "sitasi": "National Geophysical Data Center / World Data Service: NCEI/WDS Global Historical Tsunami Database. NOAA National Centers for Environmental Information. doi:10.7289/V5PN93H7.",
+      "diakses": "2026-11-22",
+      "catatan": "Endpoint diambil per halaman (maks. 200 item) lalu digabung."
+    }
+  ],
+  "catatan": [
+    "Koordinat USGS adalah episenter gempa; koordinat NOAA event adalah sumber tsunami; koordinat runup adalah titikobserved dampak. Ketiganya bukan centroid administratif.",
+    "Data mentah disimpan apa adanya. Pembersihan dan turunan ada di folder data/processed/."
+  ]
+}
